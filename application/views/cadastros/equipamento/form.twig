@@ -1,0 +1,81 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="{{ base_url('assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="{{ base_url('assets/libs/select2/js/select2.min.js') }}"></script>
+    <script src="{{ base_url('assets/libs/select2/js/pt-br.js') }}"></script>
+    <script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+    <script src="{{ base_url('assets/js/cadastros/equipamento/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Cadastro de equipamento" %}
+{% set chave_id = "equ_id" %}
+{% set form_url = "cadastro/equipamento" %}
+
+{% block descricao_tela %}
+   <i class="fas fa-microchip"></i>
+   <a class="ancora-link" href="{{ base_url('dashboard') }}">Dashboard</a>/<a class="ancora-link" href="{{ base_url('cadastro/equipamento') }}">Lista de equipamentos</a>/<span style="font-weight: 600;">Cadastro de equipamento</span>
+{% endblock descricao_tela %}
+
+{% block body %}
+   {% embed 'templates/formulario.twig' %}
+      {% block body_form %}
+
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <span style="font-size: 18px;"><i class="fas fa-microchip"></i> Cadastro de equipamento</span>
+            <hr>
+         </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+            <label>Número de série</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-barcode"></i></div>
+               </div>
+               <input type="text" class="form-control" id="equ_numero_serie" data-bind="equ_numero_serie">
+            </div>
+         </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+            <label>Produto</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fab fa-product-hunt"></i></div>
+               </div>
+               <select class="select2 form-control" id="equ_id_produto" data-bind="equ_id_produto">
+               </select>
+            </div>
+         </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+            <label>Número do chip</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fab fa-flipboard"></i></div>
+               </div>
+               <input type="text" class="form-control" id="equ_numero_chip" data-bind="equ_numero_chip">
+            </div>
+         </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 form-group">
+            <label>Vincular rastreado</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fas fa-car"></i></div>
+               </div>
+               <select class="select2 form-control" id="ras_id" data-bind="ras_id">
+                  <option value="-1">Nenhum selecionado</option>
+               </select>
+            </div>
+         </div>
+     
+
+      {% endblock body_form %}
+   {% endembed %}
+{% endblock body %}

@@ -1,0 +1,23 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/formulario.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="{{ base_url('assets/js/commons/formulario.js') }}"></script>
+    <script src="{{ base_url('assets/js/cadastros/rastreado/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Lista de rastreados" %}
+
+{% block descricao_tela %}
+    <i class="fas fa-car"></i>
+    <a class="ancora-link" href="{{ base_url('dashboard') }}">Dashboard</a>/<span style="font-weight: 600;">Lista de rastreados</span>
+{% endblock descricao_tela %}
+
+{% block body %}
+   {% include 'templates/lista.twig' %}
+{% endblock body %}

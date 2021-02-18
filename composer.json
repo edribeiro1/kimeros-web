@@ -1,0 +1,12 @@
+{
+	"description": "Kimeros - Sistema de Rastreamento",
+	"name": "web/kimeros",
+	"type": "project",
+	"homepage": "https://codeigniter.com",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.3.7",
+        "kenjis/codeigniter-ss-twig": "^0.2.1",
+        "vlucas/phpdotenv": "^4.2"
+	}
+}

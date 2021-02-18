@@ -1,0 +1,322 @@
+body {
+   padding-top: 60px;
+   background-color: #f9f9f9;
+   font-family: sans-serif;
+}
+
+.menu-link {
+   position: absolute;
+   left: 250px;
+   width: 60px;
+   height: 60px;
+   padding: 14px;
+   text-align: center;
+   color: #fff;
+   background: #2c3e50;
+   font-size: 1.5em;
+   text-decoration: none;
+   top: 0px;
+}
+
+.menu-link:hover {
+   text-decoration: none;
+   color: #25B89A;
+   background: rgba(0, 0, 0, .6)
+}
+#menu {
+   position: fixed;
+   left: -15.625em; /*left or right and the width of your navigation panel*/
+   width: 15.625em; /*should match the above value*/
+   background-color: #2c3e50;
+   top: 60px !important;
+   z-index: 1002;
+   overflow: auto;
+} 
+
+.navbar{
+   background-color: #2c3e50;
+   padding: 0px;
+   max-height: 60px;
+   height: 60px;
+}
+
+.img-logo {
+   max-height: 55px;
+   max-width: 250px;
+}
+
+.navbar-toggler {
+   border: unset !important;
+   width: 60px;
+   height: 60px;
+   border-radius: 0px;
+   outline: 0 !important;
+   font-size: 30px;
+   color: white !important;
+   font-weight: 900;
+}
+
+
+.navbar-toggler:hover {
+   text-decoration: none;
+   color: #25B89A;
+   background: rgba(0, 0, 0, .6);
+}
+
+.navbar-toggler[aria-expanded='true'] {
+   text-decoration: none;
+   color: #25B89A;
+   background: rgba(0, 0, 0, .6);
+}
+
+.menu-link.active {
+   text-decoration: none;
+   color: #25B89A;
+   background: rgba(0, 0, 0, .6);
+}
+
+
+.navbar-brand  {
+   width: 250px;
+   margin: 0px;
+   padding: 0px;
+   text-align: center;
+}
+
+.menu-bar {
+   color: white;
+}
+
+.menu-bar>ul {
+   list-style: none;
+   padding-left: 0px;
+   border-top: 2px solid #34495D;
+   margin: 0px;
+}
+
+.menu-bar>ul>li>a{
+   display: block;
+   border-bottom: 2px solid #34495D;
+   padding: 1em;
+   color: white;
+   text-decoration: none;
+   transition: 0.1s ease;
+}
+
+.menu-bar>ul>li>a:hover {
+   background:#25B89A
+}
+
+.nome-projeto {
+   text-align: center;
+   width: 100%;
+   font-size: 24px;
+   font-weight: bolder;
+}
+
+.menu-label {
+   width: 100%;
+   margin: 0px;
+   background-color: #121920;
+   padding: 5px;
+}
+
+.panel-body {
+   border-radius: 0px !important;
+   border-right: 0px;
+   border-left: 0px;
+   border-bottom: 0px;
+   background-color: transparent;
+}
+
+.dados-conta {
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: nowrap;
+   cursor: pointer;
+   height: 60px;
+   width: fit-content;
+}
+
+.dados-conta:hover {
+   text-decoration: none;
+   color: #25B89A;
+   background: rgba(0, 0, 0, .6)
+}
+
+#alerta {
+   color: white;
+   cursor: pointer;
+   height: 60px;
+   width: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 35px;
+}
+
+#alerta:hover {
+   text-decoration: none;
+   color: #25B89A;
+   background: rgba(0, 0, 0, .6);
+}
+
+.badge-alerta {
+   border-radius: 10px;
+   padding: 4px 5px 4px 4px;
+   min-width: 21px;
+   margin-left: 3px;
+}
+
+.iziModal-overlay {
+   z-index: 1031 !important;
+}
+.iziModal {
+   z-index: 1032 !important;
+   background:transparent;
+}
+
+.iziModal-content {
+   background-color: #f9fafb;
+}
+
+.iziModal-header-title {
+   /* color: #25B89A !important; */
+
+}
+
+.navbar-collapse.show, .navbar-collapse.collapsing {
+   background-color:rgba(0, 0, 0, .6);
+}
+
+.itens-collapse {
+   float:  right;
+   display:  inline-flex;
+}
+.ajuste-overflow-menu {
+   margin-bottom: 60px;
+}
+
+.btn-acoes {
+   padding: 0px 6px 0px 6px;
+   min-width: 30px;
+}
+
+.none {
+   display: none;
+}
+.iziModal-content .card-body {
+   background-color: #f9fafb;
+}
+
+.drop-logout {
+   border-radius: 0px;
+   margin: 0px;
+   background-color: #34495D;
+   border: none;
+   padding: 0px;
+}
+
+.drop-logout>.dropdown-item {
+   color: white;
+   padding: 5px 15px 5px 15px;
+}
+
+.drop-logout>.dropdown-item:hover {
+   color: #25B89A;
+   background-color: #121920;
+}
+
+.div-loading {
+   background-color: #2c3e50;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 60px;
+   background-image: url("../../../images/loadings/block.gif");
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   z-index: 1;
+   left: 0px;
+   right: 0px;
+   top: 0px;
+   bottom: 0px;
+   z-index: 1;
+   border-radius: 4px;
+}
+
+.ancora-link {
+   color: black;
+}
+
+.disable-element {
+   cursor: not-allowed;
+}
+
+#lista-instalados {
+   height: 655px;
+}
+
+@media (max-width: 400px) {
+   #mapa {
+      height: 450px !important;
+   }
+   
+   .iziModal {
+      max-width: 98% !important;
+   }
+   
+   .hide-mobile {
+      display: none;
+   }
+   
+   .search-table {
+      width: 100px;
+   }
+   
+   .disable-overflow {
+      overflow: hidden;
+   }
+
+   .card-body-mobile {
+      padding: 10px;
+   }
+
+   #lista-instalados {
+      height: auto;
+   }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+   
+   #mapa {
+      height: 500px !important;
+   }
+   
+   .iziModal {
+      max-width: 98% !important;
+   }
+   
+   .hide-mobile {
+      display: none;
+   }
+   
+   .search-table {
+      width: 100px;
+   }
+   
+   .disable-overflow {
+      overflow: hidden;
+   }
+
+   .card-body-mobile {
+      padding: 10px;
+   }
+
+   #lista-instalados {
+      height: auto;
+   }
+}
+

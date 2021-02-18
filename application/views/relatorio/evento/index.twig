@@ -1,0 +1,90 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="{{ base_url('assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{ base_url('assets/libs/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/relatorio.css') }}"/>
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/pt-br.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1EsboQXnnRnC5XmQGw7LsN-hU3UE_r-Q"></script>
+    {# <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1EsboQXnnRnC5XmQGw7LsN-hU3UE_r-Q&v=3.31"></script> #}
+    <script src="{{ base_url('assets/js/commons/mapa_google.js') }}"></script>
+    <script src="{{ base_url('assets/libs/select2/js/select2.min.js') }}"></script>
+    <script src="{{ base_url('assets/libs/select2/js/pt-br.js') }}"></script>
+    <script src="{{ base_url('assets/libs/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js') }}"></script>
+    <script src="{{ base_url('assets/js/relatorios/evento/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Relatório de evento" %}
+
+{% block descricao_tela %}
+    <i class="fas fa-microchip"></i>
+    <a class="ancora-link" href="{{ base_url('dashboard') }}">Dashboard</a>/<span style="font-weight: 600;">Relatório de evento</span>
+{% endblock descricao_tela %}
+
+{% block body %}
+   <div class="card" id="base-relatorio">
+      <div class="card-body card-body-mobile">
+
+         <div class="row"> 
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <div class="input-group-text"><i class="fas fa-car"></i></div>
+                  </div>
+                  <select class="select2 form-control" id="ras_id" data-bind="ras_id" >
+                     <option value="-1" disabled selected>Selecione o rastreado...</option>
+                  </select>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                  </div>
+                  <input class="datetimepicker form-control" id="data_inicial" data-bind="data_inicial" placeholder="Data inicial"/>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <div class="input-group">
+                  <div class="input-group-prepend">
+                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                  </div>
+                  <input class="datetimepicker form-control" id="data_final" data-bind="data_final" placeholder="Data final"/>
+               </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12" style="margin-bottom: 20px;">
+               <button class="btn btn-dark pull-right ladda-button" id="btn-gerar-relatorio" data-style="zoom-in" data-spinner-color="white">Gerar relatório</button>
+            </div>
+         </div>
+         
+
+         <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+               <div class="card bg-light card-dash">
+                  <div class="card-header card-header-dash">
+                     <i class="fas fa-map"></i> Mapa
+                  </div>
+                  <div class="card-body card-body-dash card-body-mobile" id="mapa" style="height: 400px;">
+                  </div>
+               </div>
+            </div>
+        
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" style="margin-top: 20px;">
+               <table id="relatorio-bootstrap-table" class="bootstrap-table" style="width: 100%;">
+               </table>
+            </div>
+         </div>
+
+      </div>
+   </div>
+{% endblock body %}

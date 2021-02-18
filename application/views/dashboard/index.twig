@@ -1,0 +1,120 @@
+{% extends 'commons/base.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/dashboard/main.css') }}"/>
+    {# <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/leaflet/leaflet.css') }}"/> #}
+    {# <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/leaflet-awesome-markers/dist/leaflet.awesome-markers.css') }}"/> #}
+{% endblock css %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1EsboQXnnRnC5XmQGw7LsN-hU3UE_r-Q"></script>
+    {# <script src="{{ base_url('assets/libs/leaflet/leaflet.js') }}"></script> #}
+    {# <script src="{{ base_url('assets/libs/leaflet-awesome-markers/dist/leaflet.awesome-markers.min.js') }}"></script> #}
+    {# <script src="{{ base_url('assets/js/commons/mapa.js') }}"></script> #}
+    <script src="{{ base_url('assets/js/commons/mapa_google.js') }}"></script>
+    <script src="{{ base_url('assets/js/dashboard/main.js') }}"></script>
+{% endblock js %}
+
+{% set titulo_tela = "Dashboard" %}
+
+{% block descricao_tela %}
+    <i class="fas fa-tachometer-alt"></i>
+    Dashboard
+{% endblock descricao_tela %}
+
+{% block body %}
+    <div class="row resumos">
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="card text-white bg-dark card-dash">
+               <div class="card-body card-resumo" data-url="cadastro/equipamento">
+                  <div class="div-loading"></div>
+                  <div class="icone-resumo">
+                        <i class="fas fa-microchip fa-4x"></i>
+                  </div>
+                    
+                  <div>
+                        <span class="desc-resumo">Total de equipamentos</span>
+                        <br>
+                        <span class="valor-resumo" data-id="total_equipamento">0</span>
+                  </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="card text-white bg-secondary card-dash">
+                <div class="card-body card-resumo" data-url="cadastro/rastreado">
+                    <div class="div-loading"></div>
+                    <div class="icone-resumo">
+                        <i class="fas fa-car fa-4x"></i>
+                    </div>
+                    <div>
+                        <span class="desc-resumo">Total de rastreados</span>
+                        <br>
+                        <span class="valor-resumo" data-id="total_rastreado">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="card text-white bg-info card-dash">
+                <div class="card-body card-resumo" data-url="relatorio/evento">
+                    <div class="div-loading"></div>
+                    <div class="icone-resumo">
+                        <i class="fas fa-wifi fa-4x"></i>
+                    </div>
+                    <div>
+                        <span class="desc-resumo">Total comunicando</span>
+                        <br>
+                        <span class="valor-resumo" data-id="total_comunicando">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+            <div class="card bg-cadet-blue card-dash">
+                <div class="card-body card-resumo" data-url="relatorio/evento">
+                    <div class="div-loading"></div>
+                    <div class="icone-resumo">
+                        <i class="fas fa-thumbtack fa-4x"></i>
+                    </div>
+                    <div>
+                        <span class="desc-resumo">Total de eventos</span>
+                        <br>
+                        <span class="valor-resumo" data-id="total_evento">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xl-8 col-md-8 col-sm-12">
+            <div class="card bg-light card-dash">
+               <div class="card-header card-header-dash">
+                  <i class="fas fa-map"></i> Mapa
+               </div>
+               <div class="card-body card-body-dash card-body-mobile" id="mapa"></div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-4 col-sm-12">
+            <div class="card bg-light card-dash">
+               <div class="card-header card-header-dash">
+                  <i class="fas fa-list"></i> Lista de rastreados instalados
+               </div>
+               <div class="card-body card-body-dash card-body-mobile" id="lista-instalados">
+                  <table id="table-rastreados" class="bootstrap-table" data-locale="pt-BR"></table>
+               </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Kimeros - {{ titulo_tela }}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% block css %}
+      <link rel="icon" href="{{ base_url('images/icon/kimeros_xs.png') }}" type="image/png" />
+      <link rel="shortcut icon" href="{{ base_url('images/icon/kimeros_xs.png') }}" type="image/png" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/bootstrap-4.0.0/css/bootstrap.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/izitoast/css/iziToast.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/ladda/ladda.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" integrity="sha256-IyR33qBiUXj7Clf/BpIUivtGnpIpLIL0XOCEGSQPZxg=" crossorigin="anonymous" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/bootstrap-table/bootstrap-table.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/bootstrap-table-personalizado.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/commons/base.css') }}" />
+   {% endblock css %}
+   
+</head>
+<body data-baseurl="{{ base_url() }}">
+
+   {% include "commons/navbar.twig" %}
+
+   {% include "commons/menu.twig" %}
+      
+   <div class="card panel-body" style="font-size: 12px;">
+      <div class="card-header" style="background-color: #efefef;">
+         {% block descricao_tela %}
+         {% endblock descricao_tela %}
+      </div>
+      <div class="card-body card-body-mobile">
+         {% block body %}
+         {% endblock body %}
+      </div>
+   </div>
+
+   <!-- modal notificacoes -->
+   <div id="modal_alertas" style="display: none">
+      <div class="card">
+         <div class="card-body card-body-mobile">
+            <div style="height: 38px; float: left;">
+               <button class="btn btn-info none" id="marcar-todos-lido"><i class="far fa-envelope-open"></i><span class="hide-mobile"> Marca como lido</span></button>
+               <button class="btn btn-secondary none" id="marcar-todos-nao-lido"><i class="far fa-envelope"></i><span class="hide-mobile"> Marca como não lido</span></button>
+               <button class="btn btn-danger none" id="excluir-todos-alerta"><i class="fas fa-trash-alt"></i><span class="hide-mobile"> Deletar</span></button>
+            </div>
+            <table id="table-alertas" class="bootstrap-table" data-locale="pt-BR"></table>
+         </div>
+      </div>
+   </div>
+   <!-- modal notificacoes -->
+   
+
+   {% block js %}
+      <script src="{{ base_url('assets/libs/jquery-3.3.1/jquery-3.3.1.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/bootstrap-4.0.0/js/bootstrap.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/bigslide/bigslide.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/izitoast/js/iziToast.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/ladda/spin.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/ladda/ladda.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/bootstrap-table/bootstrap-table.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/bootstrap-table/bootstrap-table-locale-all.min.js') }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" integrity="sha256-vVnwgKyq3pIb4XdL91l1EC8j7URqDRK8BAWvSnKX0U8=" crossorigin="anonymous"></script>
+      <script src="{{ base_url('assets/js/commons/requester.js') }}"></script>
+      <script src="{{ base_url('assets/js/commons/base.js') }}"></script>
+   {% endblock js %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="card" id="base-formulario">
+   <div class="card-body card-body-mobile">
+      <div class="container">
+         <div class="card">
+            <div class="card-body card-body-mobile">
+
+               <input id="config-form" type="hidden" data-url="{{form_url}}" data-chave-id="{{chave_id}}" data-id="{{id}}" >
+               <div class="row">
+                  {% block body_form %}
+                  {% endblock body_form %}
+               </div>
+            </div>
+         </div>
+         <div class="float-right">
+
+            <button id="btn-salvar-formulario" class="btn btn-outline-success btn-acoes-formulario ladda-button" data-spinner-color="green" data-style="zoom-in">Salvar</button>
+            <button  id="btn-cancelar-formulario" class="btn btn-outline-secondary btn-acoes-formulario ladda-button" data-spinner-color="gray" data-style="zoom-in">Cancelar</button>
+         </div>
+      </div>
+   </div>
+</div>

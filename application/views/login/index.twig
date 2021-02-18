@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Login - Kimeros</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% block css %}
+      <link rel="icon" href="{{ base_url('images/icon/kimeros_xs.png') }}" type="image/png" />
+      <link rel="shortcut icon" href="{{ base_url('images/icon/kimeros_xs.png') }}" type="image/png" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/bootstrap-4.0.0/css/bootstrap.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/izitoast/css/iziToast.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/libs/ladda/ladda.min.css') }}" />
+      <link rel="stylesheet" type="text/css" href="{{ base_url('assets/css/login/main.css') }}" />
+   {% endblock css %}
+   
+</head>
+<body data-baseurl="{{ base_url() }}">
+
+   <div class="container-login">
+      <div class="panel-login">
+         <div class="text-center">
+            <img class="rounded-circle img-logo" src="{{ base_url('images/icon/kimeros_m.png') }}">
+         </div>
+
+         <div class="text-center">
+            <span class="nome-sistema">Kimeros</span>
+         </div>
+         
+         <div class="field">
+            <input class="input-login" type="text" name="usuario" id="usuario" placeholder=" ">
+            <label for="usuario"><i class="fas fa-user"></i> Usuário</label>
+         </div>
+
+         <div class="field">
+            <input class="input-login" type="password" name="senha" id="senha" placeholder=" ">
+            <label for="senha"><i class="fas fa-lock"></i> Senha</label>
+         </div>
+
+         <div class="field entrar">
+            <button type="submit" class="btn-entrar ladda-button" data-style="zoom-in" data-spinner-color="#25B89A">Entrar</button>
+         </div>
+
+         <div class="senha">
+            <a class="recuperar-senha" href="#">Esqueceu a senha?</a>
+         </div>
+      </div>
+   </div>
+   
+
+   {% block body %}
+   {% endblock body %}
+
+   {% block js %}
+      <script src="{{ base_url('assets/libs/jquery-3.3.1/jquery-3.3.1.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/bootstrap-4.0.0/js/bootstrap.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/izitoast/js/iziToast.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/ladda/spin.min.js') }}"></script>
+      <script src="{{ base_url('assets/libs/ladda/ladda.min.js') }}"></script>
+      <script src="{{ base_url('assets/js/commons/requester.js') }}"></script>
+      <script src="{{ base_url('assets/js/login/main.js') }}"></script>
+   {% endblock js %}
+</body>
+</html>

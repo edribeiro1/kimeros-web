@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+   <a class="navbar-brand" href="{{ base_url('dashboard') }}"><img class="img-logo d-inline-block align-top" alt="Brand" src="{{ base_url('images/icon/kimeros_s.png') }}"></a>
+   <a href="#menu" class="menu-link">&#9776;</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span>&#9661;</span>
+   </button>
+   
+   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="itens-collapse">
+         <div id="alerta">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-danger badge-alerta none">0</span>
+         </div>
+
+         <div class="btn-group">
+            <div class="dados-conta dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-2x"></i>
+                <span style="margin:8px;">{{usu_nome}}</span>
+
+                 <div class="dropdown-menu drop-logout">
+                    <a class="dropdown-item" id="logout" href="{{ base_url('login/sair')}}" data-target="{{ base_url('login/sair')}}"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                 </div>
+            </div>
+         </div>
+      </div>
+      
+   </div>
+</nav>

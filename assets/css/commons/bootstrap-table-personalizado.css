@@ -1,0 +1,90 @@
+.bootstrap-table thead {
+   background-color: #2c3e50;
+}
+
+.pull-left {
+   float: left;
+}
+
+.pull-right {
+   float: right;;
+}
+
+
+.fixed-table-pagination {
+   border: none;
+}
+.fixed-table-container {
+   border: none !important;
+}
+
+.fixed-table-body{
+   border: none;
+   border-radius: 4px;
+   border-bottom: 5px solid #2c3e50;
+}
+.bootstrap-table .table tbody {
+   background-color: white;
+}
+.bootstrap-table .table {
+   border: none;
+}
+
+.bootstrap-table .table thead>tr>th{
+   border-top: none;
+}
+
+.bootstrap-table td {
+   font-size: 13px;
+   color: #777777;
+}
+
+.bootstrap-table th {
+   font-size: 14px;
+   color: white;
+   font-weight: 600;
+}
+
+.pagination-detail {
+   font-size: 12px;
+   color: #777777;
+}
+
+.bootstrap-table ul.pagination {
+   border: 1px solid #ccc;
+}
+
+.bootstrap-table li.page-pre {
+   border-right: 1px solid #ccc;
+}
+
+.bootstrap-table li.page-number {
+   border-right: 1px solid #ccc;
+}
+
+.bootstrap-table li.active>a {
+   background-color: #2c3e50;
+   color: white;
+   border: 1px solid #2c3e50;
+   padding: 3.5px 12px;
+}
+
+.bootstrap-table li>a {
+   color: #777777;
+   text-decoration: none;
+}
+
+.bootstrap-table .search {
+   margin-top: 0px;
+}
+
+.fixed-table-loading {
+   top: 0px !important;
+   background-color: #2c3e505e;
+   font-size: 0px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 60px;
+   background-image: url('../../../images/loadings/block.gif');
+   border-radius: 4px;
+}
